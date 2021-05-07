@@ -9,7 +9,8 @@ console.log("getCurrentUser")
 module.exports.getCurrentUser = (req, res, next) => {
 
     try {
-        res.status(200).json(currentUser)
+        console.log("ee", currentUser)
+        res.send(currentUser)
 
     } catch (err) {
         console.log(err);
