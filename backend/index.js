@@ -1,9 +1,10 @@
 const express = require('express')
 const app = express();
-
+var bodyParser = require('body-parser')
 const routesList = require('./routes');
-
-
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
 
 app.listen(8080, () => {
     console.log("Server connected")

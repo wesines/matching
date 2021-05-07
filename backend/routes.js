@@ -12,12 +12,12 @@ router.get('/getMatching', CtrlApi.getMatching);
 
 //needs
 router.post('/addNeed', CtrlApi.addNeed);
-router.put('/editneed', CtrlApi.editNeed);
-router.delete('/removeNeed', CtrlApi.removeNeed);
+router.put('/editneed/:id', CtrlApi.editNeed);
+router.delete('/removeNeed/:id', CtrlApi.removeNeed);
 
 //skills
 router.post('/addskill', CtrlApi.addSkill);
-router.put('/editSkill', CtrlApi.editSkill);
-router.delete('/removeSkill', CtrlApi.removeSkill);
+router.put('/editSkill/:id', CtrlApi.editSkill);
+router.delete('/removeSkill/:id', CtrlApi.removeSkill);
 
 module.exports = router;
