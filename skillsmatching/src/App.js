@@ -6,6 +6,8 @@ import ModifierContent from './components/ModifierContent';
 import SupprimContent from './components/SupprimContent';
 import AjoutContent from './components/AjoutContent';
 import Matching from './components/Matching';
+import Inscription from './components/Inscription';
+
 
 function App() {
   return (
@@ -14,15 +16,17 @@ function App() {
 
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={CurrentUser} />
+          {/* <Route exact path="/" component={Login} /> */}
           <Route path="/currentUser" component={CurrentUser} />
           <Route path="/goBack" component={CurrentUser} />
           <Route path="/getMatching" component={Matching} />
           <Route path="/modifier/:type&:id" component={ModifierContent} />
           <Route path="/ajouter/:type" component={AjoutContent} />
+          {/* <Route path="/signUp" component={Inscription} /> */}
+          {/* <Route path="/login" component={Login} /> */}
 
           <Route path="/supprimer/:id&:action" component={SupprimContent} />
-
         </Switch>
       </BrowserRouter>
 

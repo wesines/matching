@@ -1,8 +1,8 @@
 
+const bcryptjs = require("bcryptjs")
+const jwt = require("jsonwebtoken")
 const currentUser = require('../models/current_user.json')
 const data = require('../models/users_data.json')
-
-
 const Needs = require('../models/list_of_needs.json');
 
 
@@ -205,8 +205,8 @@ module.exports.removeSkill = (req, res, next) => {
 //S'inscrire
 module.exports.signUp = (req, res, next) => {
     try {
-
-
+        data.push(req.body)
+        res.send(data)
     } catch (err) {
         console.log(err.message);
         res.status(500).send("Something went wrong ")
@@ -214,10 +214,25 @@ module.exports.signUp = (req, res, next) => {
 
 }
 // se logger
-module.exports.login = (req, res, next) => {
+module.exports.login = async (req, res, next) => {
     try {
 
 
+        // Pas d'information à traiter
+        if (!req.body.id) {
+
+            return res.status(400).json({ message: 'Error. Please enter the correct username and id' })
+        }
+
+        // Checking
+        if (currentUser.id == req.body.id) {
+            console.log("true")
+            res.send("true")
+        }
+        else {
+            console.log("erreur")
+            return res.status(400).json({ message: 'Error. Wrong login or password' })
+        }
     } catch (err) {
         console.log(err.message);
         res.status(500).send("Something went wrong ")
