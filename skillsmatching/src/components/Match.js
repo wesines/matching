@@ -29,14 +29,15 @@ export default function Match(props) {
     const handelClicked = () => {
         alert(`Vous allez appeler M/Mme${props.data.first_name} ${props.data.last_name}`)
         const Contacted = UsersIDs
-
         Contacted.push(props.data.id)
 
 
         setUsersIDs(Contacted)
+        console.log("usersid", UsersIDs)
 
 
         localStorage.setItem("IDsContacted", JSON.stringify(UsersIDs))
+        console.log("getItem(IDsContacted)", localStorage.getItem("IDsContacted"))
 
 
     }

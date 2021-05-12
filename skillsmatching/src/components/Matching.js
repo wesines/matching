@@ -51,9 +51,9 @@ export default function Matching(props) {
             {
                 matchingDetails && matchingDetails.map(item => {
                     console.log("co", ContactedUsersIDs)
-                    console.log("localStorage.getItem(IDsContacted)", localStorage.getItem("IDsContacted"))
+                    //  console.log("localStorage.getItem(IDsContacted)", localStorage.getItem("IDsContacted"))
 
-                    if (ContactedUsersIDs.indexOf(item.id) == -1) {
+                    if (ContactedUsersIDs.indexOf(item.id) === -1) {
                         return (<Match data={item} />)
                     }
 

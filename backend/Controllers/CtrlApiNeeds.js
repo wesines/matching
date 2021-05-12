@@ -8,6 +8,7 @@ const needs = require('../models/list_of_needs.json')
 module.exports.getAllNeeds = (req, res, next) => {
 
     try {
+
         res.send(needs)
     } catch (err) {
         console.log(err);

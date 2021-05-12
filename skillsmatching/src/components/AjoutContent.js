@@ -86,7 +86,6 @@ export default function AjoutContent(props) {
         body: JSON.stringify(selectedlist)
     };
     const handleSubmit = (e) => {
-        console.log("submit", typeContent)
         if (typeContent === "need") {
 
             fetch(`http://localhost:8080/addNeed`, requestOptions)
